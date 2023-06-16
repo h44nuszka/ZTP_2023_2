@@ -111,20 +111,6 @@ class RecipeRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
-    /**
-     * Query recipes by author.
-     * @param User $user
-     *
-     * @return QueryBuilder
-     */
-    public function queryByAuthor(User $user): QueryBuilder
-    {
-        $queryBuilder = $this->queryAll();
-        $queryBuilder->andWhere('recipe.author = :author')
-            ->setParameter('author', $user);
-
-        return $queryBuilder;
-    }
 
     /**
      * @param QueryBuilder|null $queryBuilder
@@ -136,28 +122,4 @@ class RecipeRepository extends ServiceEntityRepository
         return $queryBuilder ?? $this->createQueryBuilder('recipe');
     }
 
-//    /**
-//     * @return Recipe[] Returns an array of Recipe objects
-//     */
-//    public function findByExampleField($value): array
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('r.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Recipe
-//    {
-//        return $this->createQueryBuilder('r')
-//            ->andWhere('r.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
-//    }
 }

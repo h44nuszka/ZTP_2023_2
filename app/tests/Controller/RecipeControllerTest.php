@@ -280,7 +280,7 @@ class RecipeControllerTest extends WebTestCase
         $expectedComment = $this->createComment($expectedRecipe, $adminUser, 'test content');
 
         //when
-        $this->httpClient->request('GET|POST', strval($expectedRecipeId) .'/comment');
+        $this->httpClient->request('GET|POST', '/'.strval($expectedRecipeId) .'/comment');
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
         $this->httpClient->submitForm(
             'Zapisz',

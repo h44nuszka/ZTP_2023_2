@@ -42,17 +42,6 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * Query all records.
-     *
-     * @return QueryBuilder Query builder
-     */
-    public function queryAll(): QueryBuilder
-    {
-        return $this->getOrCreateQueryBuilder()
-            ->orderBy('comment.createdAt', 'DESC');
-    }
-
-    /**
      * Save entity
      * @param Comment $comment
      */
@@ -72,15 +61,15 @@ class CommentRepository extends ServiceEntityRepository
         $this->_em->flush();
     }
 
-    /**
-     * Get or create new query builder.
-     *
-     * @param QueryBuilder|null $queryBuilder Query builder
-     *
-     * @return QueryBuilder Query builder
-     */
-    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
-    {
-        return $queryBuilder ?? $this->createQueryBuilder('comment');
-    }
+//    /**
+//     * Get or create new query builder.
+//     *
+//     * @param QueryBuilder|null $queryBuilder Query builder
+//     *
+//     * @return QueryBuilder Query builder
+//     */
+//    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+//    {
+//        return $queryBuilder ?? $this->createQueryBuilder('comment');
+//    }
 }

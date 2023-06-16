@@ -24,6 +24,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 class CategoryControllerTest extends WebTestCase
 {
     /**
+     * Test route.
+     *
+     * @const string
+     */
+    public const TEST_ROUTE = '/category';
+    /**
      * Test client
      * @var KernelBrowser
      */
@@ -56,7 +62,7 @@ class CategoryControllerTest extends WebTestCase
         $this->loginAdminUser();
 
         //when
-        $this->httpClient->request('GET', '/category');
+        $this->httpClient->request('GET', self::TEST_ROUTE);
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
@@ -78,7 +84,7 @@ class CategoryControllerTest extends WebTestCase
         $expectedCategoryId = $expectedCategory->getId();
 
         // when
-        $this->httpClient->request('GET', '/category/'. strval($expectedCategoryId));
+        $this->httpClient->request('GET', self::TEST_ROUTE.'/'. strval($expectedCategoryId));
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
@@ -96,7 +102,7 @@ class CategoryControllerTest extends WebTestCase
         $this->loginAdminUser();
 
         //when
-        $this->httpClient->request('GET', 'category/create');
+        $this->httpClient->request('GET', self::TEST_ROUTE .'/create');
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         // then
@@ -114,7 +120,7 @@ class CategoryControllerTest extends WebTestCase
         $expectedEditedCategoryTitle = 'edited category';
 
         //when
-        $this->httpClient->request('GET', 'category/'.strval($editedCategoryId) .'/edit');
+        $this->httpClient->request('GET', self::TEST_ROUTE.'/'.strval($editedCategoryId) .'/edit');
         $this->httpClient->submitForm(
             'Zapisz',
             ['category' => ['title' => $expectedEditedCategoryTitle]],
@@ -143,7 +149,7 @@ class CategoryControllerTest extends WebTestCase
         $expectedResult = 'not found';
 
         //when
-        $this->httpClient->request('GET', '/category/'.strval($deletedCategoryId) .'/delete');
+        $this->httpClient->request('GET', self::TEST_ROUTE.'/'.strval($deletedCategoryId) .'/delete');
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         $this->httpClient->submitForm(

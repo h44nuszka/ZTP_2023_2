@@ -43,45 +43,20 @@ class TagRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-
-    /**
-     * Remove entity
-     * @param Tag  $entity
-     * @param bool $flush
-     *
-     * @return void
-     */
-    public function remove(Tag $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
-        }
-    }
-
+//
 //    /**
-//     * @return Tag[] Returns an array of Tag objects
+//     * Remove entity
+//     * @param Tag  $entity
+//     * @param bool $flush
+//     *
+//     * @return void
 //     */
-//    public function findByExampleField($value): array
+//    public function remove(Tag $entity, bool $flush = false): void
 //    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->orderBy('t.id', 'ASC')
-//            ->setMaxResults(10)
-//            ->getQuery()
-//            ->getResult()
-//        ;
-//    }
-
-//    public function findOneBySomeField($value): ?Tag
-//    {
-//        return $this->createQueryBuilder('t')
-//            ->andWhere('t.exampleField = :val')
-//            ->setParameter('val', $value)
-//            ->getQuery()
-//            ->getOneOrNullResult()
-//        ;
+//        $this->getEntityManager()->remove($entity);
+//
+//        if ($flush) {
+//            $this->getEntityManager()->flush();
+//        }
 //    }
 }

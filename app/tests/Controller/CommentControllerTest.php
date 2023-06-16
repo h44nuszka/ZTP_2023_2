@@ -26,6 +26,12 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
  */
 class CommentControllerTest extends WebTestCase
 {
+    /**
+     * Test route.
+     *
+     * @const string
+     */
+    public const TEST_ROUTE = '/comment';
 
     /**
      * Set up tests
@@ -60,7 +66,7 @@ class CommentControllerTest extends WebTestCase
         $expectedResult = 'not found';
 
         //when
-        $this->httpClient->request('GET', 'comment/'.strval($deletedCommentId) .'/delete');
+        $this->httpClient->request('GET', self::TEST_ROUTE.'/'.strval($deletedCommentId) .'/delete');
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
 
         $this->httpClient->submitForm(
