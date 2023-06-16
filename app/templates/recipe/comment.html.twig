@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'action.add_comment'|trans({'%id%': recipe.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 main-content">
+
+    <h1>{{ 'action.add_comment'|trans }}</h1>
+    {{ form_start(form, { method: 'POST', action: url('recipe_comment', {id: recipe.id}) }) }}
+
+    {{ form_widget(form) }}
+
+    <div class="row gx-5">
+    <div class="col-6 col-md-offset-2">
+
+    <div class="form-group row float-sm-right">
+        <input type="submit" value="{{ 'action.save'|trans }}" class="btn mybtn" />
+    </div>
+    </div>
+
+    <div class="col-6 col-md-offset-2">
+    <div class="form-group row float-sm-left">
+        <a href="{{ url('recipe_show', {id: recipe.id}) }}" class="btn mybtn">
+            {{ 'action.back_to_list'|trans }}
+        </a>
+    </div>
+    {{ form_end(form) }}
+    </div>
+    </div>
+    </div>
+        <div class="col-1"></div>
+    </div>
+    </div>
+{% endblock %}

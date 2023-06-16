@@ -1,0 +1,71 @@
+body {
+    background-image: url("img/background2.jpg");
+}
+.main-content{
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 1%;
+    background-color: white
+}
+
+.my_navbar{
+    padding:1%;
+}
+
+.mybtn{
+    color: #fff;
+    background-color: darkred;
+    border-color: darkred;
+}
+.mybtn:hover{
+    background-color: #c02525;
+    color: #fff;
+}
+
+.right{
+    float: right;
+}
+.btnlink {
+    color: white;
+    text-decoration: none;
+}
+
+a.ico {
+    color: darkred;
+    text-decoration: none;
+}
+
+.btnlink:hover {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.sortable, .asc {
+    color: black;
+    text-decoration: none;
+}
+
+.sortable:hover, .asc:hover {
+    color: darkslategray;
+    text-decoration: none;
+}
+
+.page-link {
+    color: darkred;
+}
+
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: darkred;
+    border-color: darkred;
+}
+
+.comment{
+    border: 10px solid transparent;
+    padding: 2%;
+    border-radius: 1%;
+    border-image: url("img/background2.jpg") 10 round;
+    margin-bottom: 2%;
+}

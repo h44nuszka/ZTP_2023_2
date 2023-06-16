@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="label.actions">
+                <source>label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="label.id">
+                <source>label.id</source>
+                <target>Id</target>
+            </trans-unit>
+            <trans-unit id="label.name">
+                <source>label.name</source>
+                <target>Nazwa</target>
+            </trans-unit>
+            <trans-unit id="label.content">
+                <source>label.content</source>
+                <target>Zawartość</target>
+            </trans-unit>
+            <trans-unit id="label.tags">
+                <source>label.tags</source>
+                <target>Tagi</target>
+            </trans-unit>
+            <trans-unit id="label.created_at">
+                <source>label.created_at</source>
+                <target>Data utworzenia</target>
+            </trans-unit>
+            <trans-unit id="label.updated_at">
+            <source>label.updated_at</source>
+            <target>Data ostatniej modyfikacji</target>
+            </trans-unit>
+            <trans-unit id="label.category">
+                <source>label.category</source>
+                <target>Kategoria</target>
+            </trans-unit>
+            <trans-unit id="label.title">
+                <source>label.title</source>
+                <target>Nazwa</target>
+            </trans-unit>
+            <trans-unit id="label.author">
+                <source>label.author</source>
+                <target>Autor</target>
+            </trans-unit>
+            <trans-unit id="label.comment">
+                <source>label.comment</source>
+                <target>Komentarze</target>
+            </trans-unit>
+            <trans-unit id="message.empty_list">
+                <source>message.empty_list</source>
+                <target>Lista jest pusta</target>
+            </trans-unit>
+            <trans-unit id="message.edited_successfully">
+                <source>message.edited_successfully</source>
+                <target>Zedytowano pomyślnie!</target>
+            </trans-unit>
+            <trans-unit id="message.deleted_successfully">
+                <source>message.deleted_successfully</source>
+                <target>Usunięto pomyślnie!</target>
+            </trans-unit>
+            <trans-unit id="message.created_successfully">
+                <source>message.created_successfully</source>
+                <target>Utworzono pomyślnie!</target>
+            </trans-unit>
+            <trans-unit id="message.added_successfully">
+                <source>message.added_successfully</source>
+                <target>Dodano pomyślnie!</target>
+            </trans-unit>
+            <trans-unit id="message.category_contains_tasks">
+                <source>message.category_contains_tasks</source>
+                <target>Kategoria zawiera przepis(y). Najpierw zmień kategorię w przepisie albo usuń dany przepis, który zawiera tę kategorię.</target>
+            </trans-unit>
+            <trans-unit id="message.record_not_found">
+                <source>message.record_not_found</source>
+                <target>Rekord nie został znaleziony.</target>
+            </trans-unit>
+            <trans-unit id="message.no_comments">
+                <source>message.no_comments</source>
+                <target>Nie ma jeszcze żadnych komentarzy. Może dodasz?</target>
+            </trans-unit>
+                <trans-unit id="title.recipe_list">
+                <source>title.recipe_list</source>
+                <target>Lista przepisów</target>
+            </trans-unit>
+            <trans-unit id="title.recipe_delete">
+                <source>title.recipe_delete</source>
+                <target>Czy chcesz usunąć ten przepis?</target>
+            </trans-unit>
+            <trans-unit id="title.recipe_create">
+                <source>title.recipe_create</source>
+                <target>Stwórz nowy przepis</target>
+            </trans-unit>
+            <trans-unit id="title.recipe_edit">
+                <source>title.recipe_edit</source>
+                <target>Edytuj przepis</target>
+            </trans-unit>
+            <trans-unit id="title.cookbook">
+                <source>title.cookbook</source>
+                <target>Książka kucharska</target>
+            </trans-unit>
+            <trans-unit id="title.recipe_details">
+                <source>title.recipe_details</source>
+                <target>Cookbook</target>
+            </trans-unit>
+            <trans-unit id="title.category_list">
+                <source>title.category_list</source>
+                <target>Lista kategorii</target>
+            </trans-unit>
+            <trans-unit id="title.categories">
+                <source>title.categories</source>
+                <target>Kategorie</target>
+            </trans-unit>
+            <trans-unit id="title.category_edit">
+                <source>title.category_edit</source>
+                <target>Edytuj kategorię</target>
+            </trans-unit>
+            <trans-unit id="title.category_create">
+                <source>title.category_create</source>
+                <target>Stwórz kategorię</target>
+            </trans-unit>
+            <trans-unit id="title.category_delete">
+                <source>title.category_delete</source>
+                <target>Czy chcesz usunąć tę kategorię?</target>
+            </trans-unit>
+            <trans-unit id="title.comment_delete">
+                <source>title.comment_delete</source>
+                <target>Czy chcesz usunąć ten komentarz?</target>
+            </trans-unit>
+            <trans-unit id="action.view">
+                <source>action.view</source>
+                <target>Zobacz przepis!</target>
+            </trans-unit>
+            <trans-unit id="action.back_to_list">
+                <source>action.back_to_list</source>
+                <target>Wróć</target>
+            </trans-unit>
+            <trans-unit id="action.delete">
+                <source>action.delete</source>
+                <target>Usuń</target>
+            </trans-unit>
+            <trans-unit id="action.save">
+                <source>action.save</source>
+                <target>Zapisz</target>
+            </trans-unit>
+            <trans-unit id="action_logout">
+                <source>action_logout</source>
+                <target>Wyloguj się</target>
+            </trans-unit>
+            <trans-unit id="action.edit">
+                <source>action.edit</source>
+                <target>Edytuj</target>
+            </trans-unit>
+            <trans-unit id="action.add_comment">
+                <source>action.add_comment</source>
+                <target>Dodaj komentarz</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.category_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 main-content" style="background-color: white">
+        <div class="row">
+            <div class="col-8">
+                <h1>{{ 'title.category_list'|trans }}</h1>
+            </div>
+            <div class="col-4 d-flex flex-row-reverse">
+                <a href="{{ url('category_create') }}" class="ico" style="font-size: larger;">
+                    <i class="bi bi-plus-lg"></i>
+                </a>
+            </div>
+        </div>
+        {% if pagination is defined and pagination.items|length %}
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="paginationlink">{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 'category.createdAt') }}</th>
+                    <th class="paginationlink">{{ knp_pagination_sortable(pagination, 'label.updated_at'|trans, 'category.updatedAt') }}</th>
+                    <th class="paginationlink">{{ knp_pagination_sortable(pagination, 'label.title'|trans, 'category.title') }}</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for category in pagination.items %}
+                    <tr>
+
+                        <td>{{ category.createdAt|date('Y/m/d') }}</td>
+                        <td>{{ category.updatedAt|date('Y/m/d') }}</td>
+                        <td>{{ category.title }}</td>
+                        <td>
+                            <a class="ico" href="{{ url('category_edit', {id: category.id}) }}" title="{{ 'action.edit'|trans }}">
+                                <i class="bi bi-pencil-square"></i>
+                            </a>
+                        </td>
+                        <td>
+
+                                <a class="ico" href="{{ url('category_delete', {id: category.id}) }}" title="{{ 'action.delete'|trans }}">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>
+                {{ 'message.empty_list'|trans }}
+            </p>
+        {% endif %}
+    </div>
+    <div class="col-1"></div>
+    </div>
+    </div>
+{% endblock %}

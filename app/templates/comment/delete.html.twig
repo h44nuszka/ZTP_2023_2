@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.comment_delete'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10 main-content">
+
+                <h1>{{ 'title.comment_delete'|trans }}</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <div class="row gx-5">
+                    <div class="col-6 col-md-offset-2">
+
+                        <div class="form-group row float-sm-right">
+                            <input type="submit" value="{{ 'action.delete'|trans }}" class="btn mybtn" />
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-offset-2">
+                        <div class="form-group row float-sm-left">
+                            <a href="{{ url('recipe_index') }}" class="btn mybtn">
+                                {{ 'action.back_to_list'|trans }}
+                            </a>
+                        </div>
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}

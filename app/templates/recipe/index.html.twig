@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.recipe_list'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 main-content" style="background-color: white">
+        <div class="row">
+            <div class="col-8">
+                <h1>{{ 'title.recipe_list'|trans }}</h1>
+            </div>
+            <div class="col-4 d-flex flex-row-reverse">
+                <div style="font-size: larger;">
+                <a href="{{ url('recipe_create') }}" class="ico">
+                        <i class="bi bi-plus-lg"></i>
+                </a>
+                </div>
+            </div>
+        </div>
+        {% if pagination is defined and pagination.items|length %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th class="paginationlink">{{ knp_pagination_sortable(pagination, 'label.created_at'|trans, 'recipe.createdAt') }}</th>
+                    <th class="paginationlink">{{ knp_pagination_sortable(pagination, 'label.name'|trans, 'recipe.name') }}</th>
+                    <th>{{ 'label.category'|trans }}</th>
+                    <th>{{ 'label.tags'|trans }}</th>
+                    <th>{{ 'label.author'|trans }}</th>
+                    <th> {{ 'label.content'|trans }}</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {% for recipe in pagination.items %}
+                    <tr>
+
+                        <td>{{ recipe.createdAt|date('Y/m/d') }}</td>
+                        <td>{{ recipe.name }}</td>
+                        <td>{{ recipe.category.title }}</td>
+                        <td>
+                            {% if recipe.tags is defined and recipe.tags|length %}
+                                {% for tag in recipe.tags %}
+                                    {{ tag.title }}
+                                {% endfor %}
+                            {% else %}
+                                &nbsp;
+                            {% endif %}
+                        </td>
+                        <td>{{ recipe.author.username }}</td>
+                        <td>
+                            {% if is_granted('POST_VIEW', recipe) %}
+                            <button type="button" class=" btn mybtn">
+                            <a class="btnlink" href="{{ url('recipe_show', {id: recipe.id}) }}" title="{{ 'action.view'|trans }}">
+                                {{ 'action.view'|trans }}
+                            </a>
+                            </button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+        {% else %}
+            <p>
+                {{ 'message.empty_list'|trans }}
+            </p>
+        {% endif %}
+    </div>
+    <div class="col-1"></div>
+    </div>
+    </div>
+{% endblock %}

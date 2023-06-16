@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.recipe_details'|trans({'%id%': recipe.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10 main-content">
+
+    {% if recipe is defined and recipe|length %}
+
+
+        <div class="row gx-5">
+            <div class="col-8 col-md-offset-2">
+                <h1>{{ recipe.name }}</h1>
+            </div>
+            <div class="col-2 col-md-offset-2 d-flex flex-row-reverse">
+                {% if is_granted('POST_EDIT', recipe) %}
+                <div>
+                    <a href="{{ url('recipe_edit', {id: recipe.id}) }}" class="btn mybtn">
+                        <i class="bi bi-pencil-square"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-2 col-md-offset-2 d-flex flex-row-reverse">
+                {% if is_granted('POST_DELETE', recipe) %}
+                <div>
+                    <a href="{{ url('recipe_delete', {id: recipe.id}) }}" class="btn mybtn">
+                    <i class="bi bi-trash"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+
+
+        <dl class="dl-horizontal">
+            <dd>{{ recipe.createdAt|date('Y/m/d') }},
+                <strong>{{ 'label.category'|trans }}:</strong> {{  recipe.category.title }},
+
+                {% if recipe.tags is defined and recipe.tags|length %}
+                    <strong>{{ 'label.tags'|trans }}:</strong>
+                    {% for tag in recipe.tags %}
+                        {{ tag.title }},
+                    {% endfor %}
+                {% else %}
+                    &nbsp
+                {% endif %}
+                <strong>{{ 'label.author'|trans }}: </strong>{{ recipe.author.username }}</dd>
+            <dd>{{  recipe.content }}</dd>
+
+        </dl>
+        <p>
+                <a class="btn mybtn" href="{{ url('recipe_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                    {{ 'action.back_to_list'|trans }}
+                </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+
+    <h2>{{ 'label.comment'|trans }}</h2>
+        {% if comments|length > 0 %}
+            {% for comment in comments %}
+                <div class="comment">
+                    <h5>{{ comment.author }}</h5>
+                    <dl>
+                       <dd>{{ comment.createdAt|date('Y/m/d') }}</dd>
+                    </dl>
+                    <hr>
+                    <p>{{ comment.content }}</p>
+                </div>
+            {% if is_granted('ROLE_ADMIN') %}
+            <hr>
+            <a href="{{ url('comment_delete', {id: comment.id}) }}" title="{{ 'action.delete'|trans }}">
+                {{ 'action.delete'|trans }}
+            </a>
+            <hr>
+            {% endif %}
+            {% endfor %}
+        {% else %}
+        <p>{{ 'message.no_comments'|trans }}</p>
+        {% endif %}
+        <div style="margin-top: 2%">
+            <a class="btn mybtn" href="{{ url('recipe_comment', {id: recipe.id}) }}" title="{{ 'action.add_comment'|trans }}">
+                {{ 'action.add_comment'|trans }}
+            </a>
+        </div>
+    </div>
+    <div class="col-1"></div>
+    </div>
+    </div>
+{% endblock %}
