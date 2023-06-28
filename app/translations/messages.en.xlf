@@ -126,6 +126,10 @@
                 <source>title.comment_delete</source>
                 <target>Do you want to delete the comment?</target>
             </trans-unit>
+            <trans-unit id="title.report">
+                <source>title.report</source>
+                <target>Report</target>
+            </trans-unit>
             <trans-unit id="action.view">
                 <source>action.view</source>
                 <target>View content</target>
@@ -145,6 +149,10 @@
             <trans-unit id="action_logout">
                 <source>action_logout</source>
                 <target>Log out</target>
+            </trans-unit>
+            <trans-unit id="action_login">
+                <source>action_login</source>
+                <target>Log in</target>
             </trans-unit>
             <trans-unit id="action.edit">
                 <source>action.edit</source>

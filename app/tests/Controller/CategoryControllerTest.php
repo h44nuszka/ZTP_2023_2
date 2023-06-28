@@ -117,6 +117,9 @@ class CategoryControllerTest extends WebTestCase
         $editedCategory = $this->createCategory();
         $editedCategoryId = $editedCategory->getId();
 
+        $expUpdatedAt = $editedCategory->getUpdatedAt();
+        $expCreatedAt = $editedCategory->getCreatedAt();
+
         $expectedEditedCategoryTitle = 'edited category';
 
         //when
@@ -129,8 +132,11 @@ class CategoryControllerTest extends WebTestCase
 
         // then
         $resultCategory = $this->categoryRepository->findOneBy(array('id'=>$editedCategoryId));
+        $resultUpdatedAt = $resultCategory->getUpdatedAt();
+        $resultCreatedAt = $resultCategory->getCreatedAt();
         $resultCategoryTitle = $resultCategory->getTitle();
         $this->assertEquals($expectedEditedCategoryTitle, $resultCategoryTitle);
+        $this->assertNotEquals($expUpdatedAt, $resultUpdatedAt);
     }
 
 
@@ -151,6 +157,7 @@ class CategoryControllerTest extends WebTestCase
         //when
         $this->httpClient->request('GET', self::TEST_ROUTE.'/'.strval($deletedCategoryId) .'/delete');
         $resultStatusCode = $this->httpClient->getResponse()->getStatusCode();
+
 
         $this->httpClient->submitForm(
             'Usuń'

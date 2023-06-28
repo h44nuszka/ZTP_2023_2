@@ -18,6 +18,7 @@ use App\Service\CategoryService;
 use App\Service\CommentService;
 use App\Service\RecipeService;
 use DateTimeImmutable;
+use http\Client\Request;
 use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

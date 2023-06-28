@@ -35,16 +35,16 @@ class Category
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'create')]
-    #[Assert\Type(\DateTimeImmutable::class)]
-    private ?\DateTimeImmutable $createdAt;
+    #[Assert\Type(DateTimeImmutable::class)]
+    private ?DateTimeImmutable $createdAt;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(\DateTimeImmutable::class)]
+    #[Assert\Type(DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?\DateTimeImmutable $updatedAt;
+    private ?DateTimeImmutable $updatedAt;
 
     /**
      * Title.
@@ -77,7 +77,7 @@ class Category
      * Getter for created at.
      * @return DateTimeImmutable|null
      */
-    public function getCreatedAt(): ?\DateTimeImmutable
+    public function getCreatedAt(): ?DateTimeImmutable
     {
         return $this->createdAt;
     }
@@ -88,7 +88,7 @@ class Category
      *
      * @return void
      */
-    public function setCreatedAt(\DateTimeImmutable $createdAt): void
+    public function setCreatedAt(DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -97,7 +97,7 @@ class Category
      * Getter for updated at
      * @return DateTimeImmutable|null
      */
-    public function getUpdatedAt(): ?\DateTimeImmutable
+    public function getUpdatedAt(): ?DateTimeImmutable
     {
         return $this->updatedAt;
     }
@@ -106,7 +106,7 @@ class Category
      * Setter for updated at
      * @param DateTimeImmutable $updatedAt
      */
-    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
@@ -129,25 +129,25 @@ class Category
         $this->title = $title;
     }
 
-    /**
-     * Getter for slug
-     * @return string|null
-     */
-    public function getSlug(): ?string
-    {
-        return $this->slug;
-    }
+//    /**
+//     * Getter for slug
+//     * @return string|null
+//     */
+//    public function getSlug(): ?string
+//    {
+//        return $this->slug;
+//    }
 
-    /**
-     * Setter for slug
-     * @param string $slug
-     *
-     * @return $this
-     */
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
+//    /**
+//     * Setter for slug
+//     * @param string $slug
+//     *
+//     * @return $this
+//     */
+//    public function setSlug(string $slug): self
+//    {
+//        $this->slug = $slug;
+//
+//        return $this;
+//    }
 }
