@@ -37,9 +37,7 @@ class RecipeController extends AbstractController
     private TranslatorInterface $translator;
 
     /**
-     * Constructor
-     * @param RecipeServiceInterface $recipeService
-     * @param TranslatorInterface    $translator
+     * Constructor.
      */
     public function __construct(RecipeServiceInterface $recipeService, TranslatorInterface $translator)
     {
@@ -71,12 +69,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * Show action
-     *
-     * @param Recipe         $recipe
-     * @param CommentService $commentService
-     *
-     * @return Response
+     * Show action.
      */
     #[Route(
         '/{id}',
@@ -96,10 +89,7 @@ class RecipeController extends AbstractController
     }
 
     /**
-     * Create action
-     * @param Request $request
-     *
-     * @return Response
+     * Create action.
      */
     #[Route('/create', name: 'recipe_create', methods: 'GET|POST')]
     public function create(Request $request): Response
@@ -211,14 +201,8 @@ class RecipeController extends AbstractController
         );
     }
 
-
     /**
-     * Comment action
-     * @param Request        $request
-     * @param Recipe         $recipe
-     * @param CommentService $commentService
-     *
-     * @return Response
+     * Comment action.
      *
      * @IsGranted("ROLE_USER")
      */

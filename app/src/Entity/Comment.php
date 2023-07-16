@@ -49,8 +49,7 @@ class Comment
     private ?string $content = null;
 
     /**
-     * Getter for id
-     * @return int|null
+     * Getter for id.
      */
     public function getId(): ?int
     {
@@ -58,8 +57,7 @@ class Comment
     }
 
     /**
-     * Getter for created at
-     * @return \DateTimeImmutable|null
+     * Getter for created at.
      */
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -67,10 +65,7 @@ class Comment
     }
 
     /**
-     * Setter for created at
-     * @param \DateTimeImmutable $createdAt
-     *
-     * @return void
+     * Setter for created at.
      */
     public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
@@ -78,8 +73,7 @@ class Comment
     }
 
     /**
-     * Getter for author
-     * @return User|null
+     * Getter for author.
      */
     public function getAuthor(): ?User
     {
@@ -87,18 +81,15 @@ class Comment
     }
 
     /**
-     * Setter for author
-     * @param User|null $author
+     * Setter for author.
      */
     public function setAuthor(?User $author): void
     {
         $this->author = $author;
     }
 
-
     /**
-     * Getter for recipe
-     * @return Recipe|null
+     * Getter for recipe.
      */
     public function getRecipe(): ?Recipe
     {
@@ -106,10 +97,7 @@ class Comment
     }
 
     /**
-     * Setter for recipe
-     * @param Recipe|null $recipe
-     *
-     * @return void
+     * Setter for recipe.
      */
     public function setRecipe(?Recipe $recipe): void
     {
@@ -117,8 +105,7 @@ class Comment
     }
 
     /**
-     * Getter for content
-     * @return string|null
+     * Getter for content.
      */
     public function getContent(): ?string
     {
@@ -126,8 +113,7 @@ class Comment
     }
 
     /**
-     * Setter for content
-     * @param string $content
+     * Setter for content.
      */
     public function setContent(string $content): void
     {

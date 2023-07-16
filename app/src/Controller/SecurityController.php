@@ -1,7 +1,8 @@
 <?php
 /**
- * Security controller
+ * Security controller.
  */
+
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,15 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
- * Class security controller
+ * Class security controller.
  */
 class SecurityController extends AbstractController
 {
     /**
-     * Log in
-     * @param AuthenticationUtils $authenticationUtils
-     *
-     * @return Response
+     * Log in.
      */
     #[Route(path: '/login', name: 'app_login')]
     public function login(AuthenticationUtils $authenticationUtils): Response
@@ -36,11 +34,11 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * Log out
+     * Log out.
      */
     #[Route(path: '/logout', name: 'app_logout')]
     public function logout(): void
     {
-        //controller can be blank
+        // controller can be blank
     }
 }

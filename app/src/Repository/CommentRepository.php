@@ -11,7 +11,7 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * Class comment repository
+ * Class comment repository.
  *
  * @method Comment|null find($id, $lockMode = null, $lockVersion = null)
  * @method Comment|null findOneBy(array $criteria, array $orderBy = null)
@@ -42,8 +42,7 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * Save entity
-     * @param Comment $comment
+     * Save entity.
      */
     public function save(Comment $comment): void
     {
@@ -52,8 +51,7 @@ class CommentRepository extends ServiceEntityRepository
     }
 
     /**
-     * Delete entity
-     * @param Comment $comment
+     * Delete entity.
      */
     public function delete(Comment $comment): void
     {
@@ -61,15 +59,15 @@ class CommentRepository extends ServiceEntityRepository
         $this->_em->flush();
     }
 
-//    /**
-//     * Get or create new query builder.
-//     *
-//     * @param QueryBuilder|null $queryBuilder Query builder
-//     *
-//     * @return QueryBuilder Query builder
-//     */
-//    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
-//    {
-//        return $queryBuilder ?? $this->createQueryBuilder('comment');
-//    }
+    //    /**
+    //     * Get or create new query builder.
+    //     *
+    //     * @param QueryBuilder|null $queryBuilder Query builder
+    //     *
+    //     * @return QueryBuilder Query builder
+    //     */
+    //    private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
+    //    {
+    //        return $queryBuilder ?? $this->createQueryBuilder('comment');
+    //    }
 }

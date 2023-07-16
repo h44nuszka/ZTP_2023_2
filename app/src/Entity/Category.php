@@ -1,7 +1,8 @@
 <?php
 /**
- * Category entity
+ * Category entity.
  */
+
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
@@ -35,16 +36,16 @@ class Category
      */
     #[ORM\Column(type: 'datetime_immutable')]
     #[Gedmo\Timestampable(on: 'create')]
-    #[Assert\Type(DateTimeImmutable::class)]
-    private ?DateTimeImmutable $createdAt;
+    #[Assert\Type(\DateTimeImmutable::class)]
+    private ?\DateTimeImmutable $createdAt;
 
     /**
      * Updated at.
      */
     #[ORM\Column(type: 'datetime_immutable')]
-    #[Assert\Type(DateTimeImmutable::class)]
+    #[Assert\Type(\DateTimeImmutable::class)]
     #[Gedmo\Timestampable(on: 'update')]
-    private ?DateTimeImmutable $updatedAt;
+    private ?\DateTimeImmutable $updatedAt;
 
     /**
      * Title.
@@ -65,8 +66,7 @@ class Category
     private ?string $slug;
 
     /**
-     * Getter for id
-     * @return int|null
+     * Getter for id.
      */
     public function getId(): ?int
     {
@@ -75,45 +75,38 @@ class Category
 
     /**
      * Getter for created at.
-     * @return DateTimeImmutable|null
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
-     * Setter for created at
-     * @param DateTimeImmutable $createdAt
-     *
-     * @return void
+     * Setter for created at.
      */
-    public function setCreatedAt(DateTimeImmutable $createdAt): void
+    public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
     /**
-     * Getter for updated at
-     * @return DateTimeImmutable|null
+     * Getter for updated at.
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
     /**
-     * Setter for updated at
-     * @param DateTimeImmutable $updatedAt
+     * Setter for updated at.
      */
-    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
     /**
-     * Getter for title
-     * @return string|null
+     * Getter for title.
      */
     public function getTitle(): ?string
     {
@@ -121,33 +114,32 @@ class Category
     }
 
     /**
-     * Setter for title
-     * @param string $title
+     * Setter for title.
      */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-//    /**
-//     * Getter for slug
-//     * @return string|null
-//     */
-//    public function getSlug(): ?string
-//    {
-//        return $this->slug;
-//    }
+    //    /**
+    //     * Getter for slug
+    //     * @return string|null
+    //     */
+    //    public function getSlug(): ?string
+    //    {
+    //        return $this->slug;
+    //    }
 
-//    /**
-//     * Setter for slug
-//     * @param string $slug
-//     *
-//     * @return $this
-//     */
-//    public function setSlug(string $slug): self
-//    {
-//        $this->slug = $slug;
-//
-//        return $this;
-//    }
+    //    /**
+    //     * Setter for slug
+    //     * @param string $slug
+    //     *
+    //     * @return $this
+    //     */
+    //    public function setSlug(string $slug): self
+    //    {
+    //        $this->slug = $slug;
+    //
+    //        return $this;
+    //    }
 }

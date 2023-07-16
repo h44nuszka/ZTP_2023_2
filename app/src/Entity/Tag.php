@@ -6,7 +6,6 @@
 namespace App\Entity;
 
 use App\Repository\TagRepository;
-use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -28,13 +27,13 @@ class Tag
      * Created at.
      */
     #[ORM\Column]
-    private ?DateTimeImmutable $createdAt = null;
+    private ?\DateTimeImmutable $createdAt = null;
 
     /**
      * Updated at.
      */
     #[ORM\Column]
-    private ?DateTimeImmutable $updatedAt = null;
+    private ?\DateTimeImmutable $updatedAt = null;
 
     /**
      * Slug.
@@ -49,10 +48,8 @@ class Tag
     #[ORM\Column(length: 64)]
     private ?string $title = null;
 
-
     /**
-     * Getter for id
-     * @return int|null
+     * Getter for id.
      */
     public function getId(): ?int
     {
@@ -60,46 +57,39 @@ class Tag
     }
 
     /**
-     * Getter for created at
-     * @return DateTimeImmutable|null
+     * Getter for created at.
      */
-    public function getCreatedAt(): ?DateTimeImmutable
+    public function getCreatedAt(): ?\DateTimeImmutable
     {
         return $this->createdAt;
     }
 
     /**
      * Setter for created at.
-     * @param DateTimeImmutable $createdAt
-     *
      */
-    public function setCreatedAt(DateTimeImmutable $createdAt): void
+    public function setCreatedAt(\DateTimeImmutable $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
 
     /**
-     * Getter for get updated at
-     * @return DateTimeImmutable|null
+     * Getter for get updated at.
      */
-    public function getUpdatedAt(): ?DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
     /**
      * Setter for updated at.
-     * @param DateTimeImmutable $updatedAt
-     *
      */
-    public function setUpdatedAt(DateTimeImmutable $updatedAt): void
+    public function setUpdatedAt(\DateTimeImmutable $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }
 
     /**
-     * Getter for slug
-     * @return string|null
+     * Getter for slug.
      */
     public function getSlug(): ?string
     {
@@ -108,7 +98,6 @@ class Tag
 
     /**
      * Setter for slug.
-     * @param string $slug
      *
      * @return $this
      */
@@ -118,8 +107,7 @@ class Tag
     }
 
     /**
-     * Getter for title
-     * @return string|null
+     * Getter for title.
      */
     public function getTitle(): ?string
     {
@@ -127,9 +115,7 @@ class Tag
     }
 
     /**
-     * Setter for title
-     * @param string $title
-     *
+     * Setter for title.
      */
     public function setTitle(string $title): void
     {

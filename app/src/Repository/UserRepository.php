@@ -1,7 +1,8 @@
 <?php
 /**
- * User repository
+ * User repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\User;
@@ -12,7 +13,8 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 
 /**
- * Class user repository
+ * Class user repository.
+ *
  * @extends ServiceEntityRepository<User>
  *
  * @method User|null find($id, $lockMode = null, $lockVersion = null)
@@ -23,8 +25,7 @@ use Symfony\Component\Security\Core\User\PasswordUpgraderInterface;
 class UserRepository extends ServiceEntityRepository implements PasswordUpgraderInterface
 {
     /**
-     * Constructor
-     * @param ManagerRegistry $registry
+     * Constructor.
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -32,11 +33,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
 
     /**
-     * Save entity
-     * @param User $entity
-     * @param bool $flush
-     *
-     * @return void
+     * Save entity.
      */
     public function save(User $entity, bool $flush = false): void
     {
@@ -48,11 +45,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     }
 
     /**
-     * Remove entity
-     * @param User $entity
-     * @param bool $flush
-     *
-     * @return void
+     * Remove entity.
      */
     public function remove(User $entity, bool $flush = false): void
     {
@@ -65,10 +58,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
 
     /**
      * Used to upgrade (rehash) the user's password automatically over time.
-     * @param PasswordAuthenticatedUserInterface $user
-     * @param string                             $newHashedPassword
-     *
-     * @return void
      */
     public function upgradePassword(PasswordAuthenticatedUserInterface $user, string $newHashedPassword): void
     {

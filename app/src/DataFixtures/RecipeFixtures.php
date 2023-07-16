@@ -60,7 +60,8 @@ class RecipeFixtures extends AbstractBaseFixtures implements DependentFixtureInt
     }
 
     /**
-     * Get dependencies
+     * Get dependencies.
+     *
      * @return string[]
      */
     public function getDependencies(): array

@@ -55,7 +55,6 @@ class RecipeService implements RecipeServiceInterface
 
     /**
      * Save recipe.
-     * @param Recipe $recipe
      */
     public function save(Recipe $recipe): void
     {
@@ -64,23 +63,20 @@ class RecipeService implements RecipeServiceInterface
 
     /**
      * Delete entity.
-     * @param Recipe $recipe
-     *
-     * @return void
      */
     public function delete(Recipe $recipe): void
     {
         $this->recipeRepository->delete($recipe);
     }
 
-//    /**
-//     * Find recipe by category
-//     * @param array $category
-//     *
-//     * @return Recipe[]
-//     */
-//    public function findBy(array $category): array
-//    {
-//        return $this->recipeRepository->findBy($category);
-//    }
+    //    /**
+    //     * Find recipe by category
+    //     * @param array $category
+    //     *
+    //     * @return Recipe[]
+    //     */
+    //    public function findBy(array $category): array
+    //    {
+    //        return $this->recipeRepository->findBy($category);
+    //    }
 }

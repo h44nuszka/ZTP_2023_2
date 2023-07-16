@@ -7,7 +7,6 @@ namespace App\Repository;
 
 use App\Entity\Category;
 use App\Entity\Recipe;
-use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\NoResultException;
@@ -38,8 +37,7 @@ class RecipeRepository extends ServiceEntityRepository
     public const PAGINATOR_ITEMS_PER_PAGE = 10;
 
     /**
-     * Constructor
-     * @param ManagerRegistry $registry
+     * Constructor.
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -65,15 +63,11 @@ class RecipeRepository extends ServiceEntityRepository
     /**
      * Get or create new query builder.
      *
-     * @param QueryBuilder|null $queryBuilder Query builder
-     *
      * @return QueryBuilder Query builder
      */
 
-
     /**
-     * Save entity
-     * @param Recipe $recipe
+     * Save entity.
      */
     public function save(Recipe $recipe): void
     {
@@ -82,8 +76,7 @@ class RecipeRepository extends ServiceEntityRepository
     }
 
     /**
-     * Delete entity
-     * @param Recipe $recipe
+     * Delete entity.
      */
     public function delete(Recipe $recipe): void
     {
@@ -93,7 +86,6 @@ class RecipeRepository extends ServiceEntityRepository
 
     /**
      * Counts recipes by category.
-     * @param Category $category
      *
      * @return int Number of recipes in category
      *
@@ -111,15 +103,8 @@ class RecipeRepository extends ServiceEntityRepository
             ->getSingleScalarResult();
     }
 
-
-    /**
-     * @param QueryBuilder|null $queryBuilder
-     *
-     * @return QueryBuilder
-     */
     private function getOrCreateQueryBuilder(QueryBuilder $queryBuilder = null): QueryBuilder
     {
         return $queryBuilder ?? $this->createQueryBuilder('recipe');
     }
-
 }

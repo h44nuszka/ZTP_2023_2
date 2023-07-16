@@ -20,8 +20,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     /**
-     * Id
-     * @var int|null
+     * Id.
      */
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -50,8 +49,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $password;
 
     /**
-     * Getter for id
-     * @return int|null
+     * Getter for id.
      */
     public function getId(): ?int
     {
@@ -59,18 +57,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * Getter for email
-     * @return string|null
+     * Getter for email.
      */
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-
     /**
-     * Setter for email
-     * @param string $email
+     * Setter for email.
      */
     public function setEmail(string $email): void
     {
@@ -116,8 +111,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * Setter for roles
-     * @param array $roles
+     * Setter for roles.
      */
     public function setRoles(array $roles): void
     {
@@ -125,8 +119,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * Getter for password
-     * @return string
+     * Getter for password.
      *
      * @see PasswordAuthenticatedUserInterface
      */
@@ -136,8 +129,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     * Setter for password
-     * @param string $password
+     * Setter for password.
      */
     public function setPassword(string $password): void
     {
@@ -145,11 +137,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     /**
-     *
      * Returning a salt is only needed, if you are not using a modern
      * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
-     *
-     * @return string|null
      *
      * @see UserInterface
      */

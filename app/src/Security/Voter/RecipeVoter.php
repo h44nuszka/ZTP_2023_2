@@ -37,8 +37,7 @@ class RecipeVoter extends Voter
     private Security $security;
 
     /**
-     * Constructor
-     * @param Security $security
+     * Constructor.
      */
     public function __construct(Security $security)
     {
@@ -47,10 +46,6 @@ class RecipeVoter extends Voter
 
     /**
      * Determines if the attribute and subject are supported by this voter.
-     * @param string $attribute
-     * @param mixed  $subject
-     *
-     * @return bool
      */
     protected function supports(string $attribute, mixed $subject): bool
     {
@@ -64,11 +59,6 @@ class RecipeVoter extends Voter
      * Perform a single access check operation on a given attribute, subject and token.
      * It is safe to assume that $attribute and $subject already
      * passed the "supports()" method check.
-     * @param string         $attribute
-     * @param mixed          $subject
-     * @param TokenInterface $token
-     *
-     * @return bool
      */
     protected function voteOnAttribute(string $attribute, mixed $subject, TokenInterface $token): bool
     {
@@ -95,10 +85,6 @@ class RecipeVoter extends Voter
 
     /**
      * Checks if user can view recipe.
-     * @param Recipe $recipe
-     * @param User   $user
-     *
-     * @return bool
      */
     private function canView(Recipe $recipe, User $user): bool
     {
@@ -106,11 +92,7 @@ class RecipeVoter extends Voter
     }
 
     /**
-     * Checks if user can edit the recipe
-     * @param Recipe $recipe
-     * @param User   $user
-     *
-     * @return bool
+     * Checks if user can edit the recipe.
      */
     private function canEdit(Recipe $recipe, User $user): bool
     {
@@ -119,10 +101,6 @@ class RecipeVoter extends Voter
 
     /**
      * Checks if user can delete recipe.
-     * @param Recipe $recipe
-     * @param User   $user
-     *
-     * @return bool
      */
     private function canDelete(Recipe $recipe, User $user): bool
     {

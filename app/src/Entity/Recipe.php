@@ -77,14 +77,15 @@ class Recipe
     private ?User $author = null;
 
     /**
-     * Comments
+     * Comments.
+     *
      * @var Collection|ArrayCollection
      */
     #[ORM\OneToMany(mappedBy: 'recipe', targetEntity: Comment::class, orphanRemoval: true)]
     private Collection $comments;
 
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -103,8 +104,7 @@ class Recipe
     }
 
     /**
-     * Getter for name
-     * @return string|null
+     * Getter for name.
      */
     public function getName(): ?string
     {
@@ -112,8 +112,7 @@ class Recipe
     }
 
     /**
-     * Setter for name
-     * @param string $name
+     * Setter for name.
      *
      * @return $this
      */
@@ -125,8 +124,7 @@ class Recipe
     }
 
     /**
-     * Getter for content
-     * @return string|null
+     * Getter for content.
      */
     public function getContent(): ?string
     {
@@ -134,8 +132,7 @@ class Recipe
     }
 
     /**
-     * Setter for content
-     * @param string $content
+     * Setter for content.
      *
      * @return $this
      */
@@ -147,8 +144,7 @@ class Recipe
     }
 
     /**
-     * Getter for created at
-     * @return \DateTimeImmutable|null
+     * Getter for created at.
      */
     public function getCreatedAt(): ?\DateTimeImmutable
     {
@@ -156,8 +152,7 @@ class Recipe
     }
 
     /**
-     * Setter for created at
-     * @param \DateTimeImmutable $createdAt
+     * Setter for created at.
      *
      * @return $this
      */
@@ -169,8 +164,7 @@ class Recipe
     }
 
     /**
-     * Getter for category
-     * @return Category|null
+     * Getter for category.
      */
     public function getCategory(): ?Category
     {
@@ -178,10 +172,7 @@ class Recipe
     }
 
     /**
-     * Setter for category
-     * @param Category|null $category
-     *
-     * @return void
+     * Setter for category.
      */
     public function setCategory(?Category $category): void
     {
@@ -199,10 +190,7 @@ class Recipe
     }
 
     /**
-     * Add tags
-     * @param Tag $tag
-     *
-     * @return void
+     * Add tags.
      */
     public function addTag(Tag $tag): void
     {
@@ -212,10 +200,7 @@ class Recipe
     }
 
     /**
-     * Remove tag
-     * @param Tag $tag
-     *
-     * @return void
+     * Remove tag.
      */
     public function removeTag(Tag $tag): void
     {
@@ -223,8 +208,7 @@ class Recipe
     }
 
     /**
-     * Getter for author
-     * @return User|null
+     * Getter for author.
      */
     public function getAuthor(): ?User
     {
@@ -232,10 +216,7 @@ class Recipe
     }
 
     /**
-     * Setter for author
-     * @param User|null $author
-     *
-     * @return void
+     * Setter for author.
      */
     public function setAuthor(?User $author): void
     {
@@ -251,8 +232,7 @@ class Recipe
     }
 
     /**
-     * Add comment
-     * @param Comment $comment
+     * Add comment.
      *
      * @return $this
      */
@@ -267,8 +247,7 @@ class Recipe
     }
 
     /**
-     * Remove comment
-     * @param Comment $comment
+     * Remove comment.
      *
      * @return $this
      */

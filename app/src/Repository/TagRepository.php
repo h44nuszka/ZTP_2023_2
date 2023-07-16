@@ -1,7 +1,8 @@
 <?php
 /**
- * Tag repository
+ * Tag repository.
  */
+
 namespace App\Repository;
 
 use App\Entity\Tag;
@@ -9,7 +10,8 @@ use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * Class tag repository
+ * Class tag repository.
+ *
  * @extends ServiceEntityRepository<Tag>
  *
  * @method Tag|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,8 +22,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class TagRepository extends ServiceEntityRepository
 {
     /**
-     * Construct
-     * @param ManagerRegistry $registry
+     * Construct.
      */
     public function __construct(ManagerRegistry $registry)
     {
@@ -29,11 +30,7 @@ class TagRepository extends ServiceEntityRepository
     }
 
     /**
-     * Save entity
-     * @param Tag  $entity
-     * @param bool $flush
-     *
-     * @return void
+     * Save entity.
      */
     public function save(Tag $entity, bool $flush = false): void
     {
@@ -43,20 +40,20 @@ class TagRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
-//
-//    /**
-//     * Remove entity
-//     * @param Tag  $entity
-//     * @param bool $flush
-//     *
-//     * @return void
-//     */
-//    public function remove(Tag $entity, bool $flush = false): void
-//    {
-//        $this->getEntityManager()->remove($entity);
-//
-//        if ($flush) {
-//            $this->getEntityManager()->flush();
-//        }
-//    }
+    //
+    //    /**
+    //     * Remove entity
+    //     * @param Tag  $entity
+    //     * @param bool $flush
+    //     *
+    //     * @return void
+    //     */
+    //    public function remove(Tag $entity, bool $flush = false): void
+    //    {
+    //        $this->getEntityManager()->remove($entity);
+    //
+    //        if ($flush) {
+    //            $this->getEntityManager()->flush();
+    //        }
+    //    }
 }

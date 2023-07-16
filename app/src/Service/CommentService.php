@@ -38,9 +38,6 @@ class CommentService
 
     /**
      * Save comment.
-     * @param Comment $comment
-     *
-     * @return void
      */
     public function save(Comment $comment): void
     {
@@ -59,7 +56,6 @@ class CommentService
 
     /**
      * Find comment by recipe.
-     * @param array $recipe
      *
      * @return Comment[]
      */
